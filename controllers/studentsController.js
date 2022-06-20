@@ -2,7 +2,6 @@ const express = require('express');
 const res = require('express/lib/response');
 const controller = express.Router();
 const studentData = require('../studentData.json');
-// const { useParams }
 
 controller.get('/', (req, res) => {
     res.json({studentData})
