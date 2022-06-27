@@ -6,7 +6,13 @@
 // "Jerry", 3 ==> "Jerry Jerry Jerry"
 
 function repeatNTimesWithSpace(string, num){
-    return (string + ' ').repeat(num);
+    return (string + ' ').repeat(num).trim();
 }
 
-module.exports = repeatNTimesWithSpace;
+function capitalizeFirstLetter(string){
+    if(!string) return ''
+    
+    return string[0].toUpperCase() + string.slice(1)
+}
+
+module.exports = {repeatNTimesWithSpace, capitalizeFirstLetter};

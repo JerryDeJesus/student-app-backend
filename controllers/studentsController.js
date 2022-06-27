@@ -5,6 +5,16 @@ const studentData = require('../studentData.json');
 
 controller.get('/', (req, res) => {
     res.json({studentData})
+
+    let {limit=25, min, max} = req.query;
+
+    limit = Number(limit);
+
+    let studentDataForDelivery = {...studentData};
+
+    studentDataForDelivery.students = studentDataForDelivery.students.slice(0, limit);
+
+    response.json(studentDataForDelivery);
 });
 
 controller.get('/:id', (req, res) => {
